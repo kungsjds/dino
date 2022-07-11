@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    overflow-y:  auto;
+    overflow-x:  hidden;
+}
+
+.dino {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url(dino.png);
+    bottom: 0px;
+}
+
+.obstacle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url(cactus.png);
+    bottom: 0px;
+}
+
+#desert {
+    position: absolute;
+    bottom: 0px;    
+    background-image: url('bg.png');
+    /* Repeat the image horizontally */
+    background-repeat: repeat-x;
+
+    /* Calls the keyframes and set a speed. Will move linearly to the right and infinitely */
+    animation: slideright 6000s infinite linear;
+    /* It's the same, but with render support for chrome, safari and other browsers that use webkit */
+    -webkit-animation: slideright 6000s infinite linear;    
+    
+    width: 400%; 
+    height: 200px;
+}
+
+/* Slider to move the ground to the right */
+@keyframes slideright {
+    
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+
+}
+
+/* Render support for chrome,safari, etc */
+@-webkit-keyframes slideright {
+
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+
+}
+
+
